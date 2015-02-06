@@ -45,13 +45,13 @@
     <LinkIncremental>true</LinkIncremental>
     <OutDir>$(SolutionDir)\bin\win32\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)\tmp\win32\$(Configuration)\</IntDir>
-    <IncludePath>$(SolutionDir)inc\;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)src\;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <OutDir>$(SolutionDir)\bin\win32\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)\tmp\win32\$(Configuration)\</IntDir>
-    <IncludePath>$(SolutionDir)inc\;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)src\;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -87,7 +87,7 @@
     <ClCompile Include="src\PolycodeTemplateApp.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="inc\PolycodeTemplateApp.h" />
+    <ClInclude Include="src\PolycodeTemplateApp.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
