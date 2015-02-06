@@ -18,6 +18,8 @@ bld/
 [Bb]in/
 [Oo]bj/
 
+temp/
+
 # Roslyn cache directories
 *.ide/
 
@@ -181,3 +183,5 @@ UpgradeLog*.htm
 
 # Microsoft Fakes
 FakesAssemblies/
+
+.sconsign.dblite
