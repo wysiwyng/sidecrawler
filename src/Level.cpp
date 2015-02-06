@@ -33,7 +33,7 @@ int Level::readLevelFromFile(const char* file) {
 	if(!inFile.is_open()) return -1;
 
 	size = inFile.tellg();
-	specSize = size - 4;
+	specSize = size - (streampos)4;
 	memblock = new char[size];
 	levelSpecs = new char[specSize];
 

@@ -83,10 +83,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\BMPFile.cpp" />
+    <ClCompile Include="src\Level.cpp" />
+    <ClCompile Include="src\LevelStructure.cpp" />
     <ClCompile Include="src\winMain.cpp" />
     <ClCompile Include="src\PolycodeTemplateApp.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\BMPFile.h" />
+    <ClInclude Include="src\Level.h" />
+    <ClInclude Include="src\LevelStructure.h" />
     <ClInclude Include="src\PolycodeTemplateApp.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
