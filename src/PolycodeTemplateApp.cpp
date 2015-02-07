@@ -1,4 +1,7 @@
 #include "PolycodeTemplateApp.h"
+#include "nfd.h"
+#include "BMPFile.h"
+#include "Level.h"
 
 PolycodeTemplateApp::PolycodeTemplateApp(PolycodeView *view) {
 	core = new POLYCODE_CORE(view, 640, 480, false, true, 0, 0, 90, 0, true);
@@ -21,6 +24,24 @@ PolycodeTemplateApp::PolycodeTemplateApp(PolycodeView *view) {
 		scene->addPhysicsChild(box, PhysicsSceneEntity::SHAPE_BOX, 1.0);
 	}
 
+	char blub = 0xaa;
+
+	unsigned char upper = (unsigned char)blub >> 4;
+	unsigned char lower = (unsigned char)blub & 0xf;
+
+	String wd = core->getDefaultWorkingDirectory();
+	nfdchar_t *outPath = NULL;
+	nfdresult_t result = NFD_OpenDialog("bmp", wd.c_str(), &outPath);
+
+	Level * level = new Level();
+	level->readLevelFromFile(outPath);
+
+	//BMPFile * bmp = new BMPFile();
+
+	//bmp->read(outPath);
+
+
+	Logger::log("%s", wd.c_str());
 	scene->getDefaultCamera()->setPosition(7, 7, 7);
 	scene->getDefaultCamera()->lookAt(Vector3(0, 0, 0));
 }

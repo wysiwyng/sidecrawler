@@ -45,7 +45,7 @@
     <LinkIncremental>true</LinkIncremental>
     <OutDir>$(SolutionDir)\bin\win32\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)\tmp\win32\$(Configuration)\</IntDir>
-    <IncludePath>$(SolutionDir)src\;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)dep\nfd\include;$(SolutionDir)dep\nfd;$(SolutionDir)src\;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -83,6 +83,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="dep\nfd\nfd_common.c" />
+    <ClCompile Include="dep\nfd\nfd_win.cpp" />
     <ClCompile Include="src\BMPFile.cpp" />
     <ClCompile Include="src\Level.cpp" />
     <ClCompile Include="src\LevelStructure.cpp" />
@@ -90,6 +92,9 @@
     <ClCompile Include="src\PolycodeTemplateApp.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="dep\nfd\common.h" />
+    <ClInclude Include="dep\nfd\include\nfd.h" />
+    <ClInclude Include="dep\nfd\nfd_common.h" />
     <ClInclude Include="src\BMPFile.h" />
     <ClInclude Include="src\Level.h" />
     <ClInclude Include="src\LevelStructure.h" />

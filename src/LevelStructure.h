@@ -15,12 +15,12 @@ using namespace std;
 
 class LevelStructure {
 public:
-	LevelStructure(char *levelData, int sizeX, int sizeY);
+	LevelStructure(std::vector<std::vector<unsigned char>> levelData, int sizeX, int sizeY);
 	virtual ~LevelStructure();
-	char getTile(int x, int y);
+	unsigned char getTile(int x, int y);
 
 private:
-	char *lvl;
+	std::vector<std::vector<unsigned char>> lvl;
 	int sizeX;
 	int sizeY;
 };
