@@ -6,28 +6,31 @@
 
 #include <vector>
 #include <fstream>
-#include <cstdint>
+
+typedef int LONG;
+typedef unsigned short WORD;
+typedef unsigned int DWORD;
 
 typedef struct bmp_file_header_s {
-	uint16_t bfType;
-	uint32_t bfSize;
-	uint16_t bfReserved1;
-	uint16_t bfReserved2;
-	uint32_t bfOffBits;
+    WORD  bfType;
+    DWORD bfSize;
+    WORD  bfReserved1;
+    WORD  bfReserved2;
+    DWORD bfOffBits;
 } bmp_file_header, *pbmp_file_header;
 
 typedef struct bmp_info_header_s {
-	uint32_t biSize;
-	int32_t  biWidth;
-	int32_t  biHeight;
-	uint16_t  biPlanes;
-	uint16_t  biBitCount;
-	uint32_t biCompression;
-	uint32_t biSizeImage;
-	int32_t  biXPelsPerMeter;
-	int32_t  biYPelsPerMeter;
-	uint32_t biClrUsed;
-	uint32_t biClrImportant;
+    DWORD biSize;
+    LONG  biWidth;
+    LONG  biHeight;
+    WORD  biPlanes;
+    WORD  biBitCount;
+    DWORD biCompression;
+    DWORD biSizeImage;
+    LONG  biXPelsPerMeter;
+    LONG  biYPelsPerMeter;
+    DWORD biClrUsed;
+    DWORD biClrImportant;
 } bmp_info_header, *pbmp_info_header;
 
 class BMPFile {

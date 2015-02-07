@@ -5,6 +5,9 @@ env.Append(CPPPATH=['src', 'dep/nfd', 'dep/nfd/include'])
 sources = Split("""
 src/linuxMain.cpp
 src/PolycodeTemplateApp.cpp
+src/BMPFile.cpp
+src/Level.cpp
+src/LevelStructure.cpp
 dep/nfd/nfd_common.c
 dep/nfd/nfd_gtk.c
 """)
