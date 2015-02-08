@@ -62,6 +62,7 @@ public:
 	~BMPFile();
 	void read(const char* filename);
 	std::vector< std::vector<unsigned char> > read_data();
+
 	unsigned int get_size_x();
 	unsigned int get_size_y();
 private:
@@ -69,7 +70,8 @@ private:
 	//std::vector<std::vector<unsigned char>> data;
 	pbmp_file_header file_header;
 	pbmp_info_header info_header;
-	pbmp_color_table color_table;
+	//pbmp_color_table color_table;
+	std::vector<pcolor> color_table;
 };
 
 #endif
