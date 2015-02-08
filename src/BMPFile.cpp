@@ -25,6 +25,7 @@ void BMPFile::read(const char* filename){
 
 		file_header = (pbmp_file_header)(&buffer[0]);
 		info_header = (pbmp_info_header)(&buffer[0] + sizeof(bmp_file_header));
+		color_table = (pbmp_color_table)(&buffer[0] + sizeof(bmp_file_header) + sizeof(bmp_info_header));
 	}
 }
 
