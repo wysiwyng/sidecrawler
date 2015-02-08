@@ -35,7 +35,7 @@ public:
 	BMPFile(const char * filename);
 	~BMPFile();
 	void read(const char* filename);
-	std::vector<std::vector<unsigned char>> read_data();
+	std::vector< std::vector<unsigned char> > read_data();
 	unsigned int get_size_x();
 	unsigned int get_size_y();
 private:

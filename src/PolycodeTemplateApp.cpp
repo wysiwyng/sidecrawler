@@ -24,15 +24,10 @@ PolycodeTemplateApp::PolycodeTemplateApp(PolycodeView *view) {
 		scene->addPhysicsChild(box, PhysicsSceneEntity::SHAPE_BOX, 1.0);
 	}
 
-	char blub = 0xaa;
-
-	unsigned char upper = (unsigned char)blub >> 4;
-	unsigned char lower = (unsigned char)blub & 0xf;
-
 	String wd = core->getDefaultWorkingDirectory();
 	nfdchar_t *outPath = NULL;
 	nfdresult_t result = NFD_OpenDialog("bmp", wd.c_str(), &outPath);
-
+    if (result != NFD_OKAY) exit(EXIT_FAILURE);
 	Level * level = new Level();
 	level->readLevelFromFile(outPath);
 

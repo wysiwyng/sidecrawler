@@ -28,8 +28,8 @@ void BMPFile::read(const char* filename){
 	}
 }
 
-std::vector<std::vector<unsigned char>> BMPFile::read_data(){
-	std::vector<std::vector<unsigned char>> ret;
+std::vector< std::vector<unsigned char> > BMPFile::read_data(){
+	std::vector< std::vector<unsigned char> > ret;
 	int idx = file_header->bfOffBits;
 	int width = info_header->biWidth;
 	int height = info_header->biHeight;
